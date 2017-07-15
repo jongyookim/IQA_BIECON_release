@@ -8,10 +8,10 @@ This code implements the system described in the following paper:
 This code was developed and tested with Theano 0.9, CUDA 8.0, and Windows.
 
 ## Generating local quality score maps
-Set `BASE_PATH` to the actual root path of each database.
+1. Set `BASE_PATH` to the actual root path of each database.
 Set `FR_MET_BASEPATH` and `FR_MET_SUBPATH` in `gen_local_metric_scores.m`.
-For each database, data will be stored in "`FR_MET_BASEPATH` + `FR_MET_SUBPATH`".
-Then, run `gen_local_metric_scores.m` using Matlab. We provide a SSIM metric as default.
+2. For each database, data will be stored in "`FR_MET_BASEPATH` + `FR_MET_SUBPATH`".
+3. Run `gen_local_metric_scores.m` using Matlab. We provide a SSIM metric as default.
 
 ## Environment setting
 ### Setting database path:
