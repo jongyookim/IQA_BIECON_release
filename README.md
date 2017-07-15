@@ -23,7 +23,7 @@ For each database, set `BASE_PATH` to the actual root path of each database in t
 (These `BASE_PATH` should be same to the `BASE_PATH` in `gen_local_metric_scores.m`.)
 
 ### Setting local quality score map path:
-Set `FR_MET_BASEPATH` and `FR_MET_SUBPATH_{*DB name*}` in
+Set `FR_MET_BASEPATH` and `FR_MET_SUBPATH_{DB name}` in
 `IQA_BIECON_release/data_load/data_loader_IQA`.
 {*DB name*} can be *LIVE*, *TID2008*, or *TID2013*
 
