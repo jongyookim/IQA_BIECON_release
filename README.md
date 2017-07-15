@@ -51,6 +51,6 @@ BIECON was tested on the full-sets of LIVE IQA and TID2013 databases. During the
 |Database |SRCC   |PLCC   |
 |---------|:-----:|:-----:|
 |LIVE     |0.9603 | 0.9622|
-|TID2013  |0.7130 | 0.7597|
+|TID2013  |0.7205 | 0.7650|
 
 
