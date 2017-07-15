@@ -11,8 +11,8 @@ from scipy.ndimage.filters import convolve
 from .dataset import Dataset
 from ..ssim import ssim
 
+FR_MET_BASEPATH = 'D:/DB/IQA/BIECON/'
 FR_MET_SUBPATH_LIVE = 'LIVE/LIVE IQA DB/'
-FR_MET_SUBPATH_LIVE_MD = 'LIVE/LIVE_MD/'
 FR_MET_SUBPATH_CSIQ = 'CSIQ/'
 FR_MET_SUBPATH_TID2008 = 'TID2008/'
 FR_MET_SUBPATH_TID2013 = 'TID2013/'
@@ -78,7 +78,8 @@ class DataLoader(object):
 
         # Local metric score
         self.fr_met = db_config.get('fr_met', None)
-        self.fr_met_path = db_config.get('fr_met_path', None)
+        # self.fr_met_path = db_config.get('fr_met_path', None)
+        self.fr_met_path = FR_MET_BASEPATH
         self.fr_met_scale = float(db_config.get('fr_met_scale', 1.0))
         assert self.fr_met_scale > 0
         if self.fr_met:

@@ -4,7 +4,7 @@ import numpy as np
 
 # Define DB information
 BASE_PATH = 'D:/DB/IQA/LIVE/LIVE IQA DB'
-LIST_FILE_NAME = 'LIVE_IQA.txt'
+LIST_FILE_NAME = 'LIVE.txt'
 ALL_SCENES = list(range(29))
 ALL_DIST_TYPES = list(range(5))
 
@@ -20,7 +20,7 @@ def make_image_list(scenes, dist_types=None, show_info=True):
     # Get reference / distorted image file lists:
     # d_img_list and score_list
     d_img_list, r_img_list, r_idx_list, score_list = [], [], [], []
-    list_file_name = os.path.join(BASE_PATH, LIST_FILE_NAME)
+    list_file_name = LIST_FILE_NAME
     with open(list_file_name, 'r') as listFile:
         for line in listFile:
             # ref_idx ref_name dist_name dist_types, DMOS, widht, height

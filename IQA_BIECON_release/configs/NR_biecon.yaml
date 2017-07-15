@@ -12,7 +12,6 @@ common:
         fr_met: SSIM
         fr_met_scale: 0.5
         fr_met_avg: True
-        fr_met_path: D:/DB/IQA/BIECON/
 
     model:
         model: IQA_BIECON_release.models.BIECON_base
