@@ -1,0 +1,54 @@
+common:
+    database:
+        patch_size: [32, 32]
+        patch_step: [32, 32]
+        horz_ref: True
+        patch_mode: shift_center
+        color: gray
+        local_norm: True
+        std_filt_r: 0.8
+        train_size: 0.8
+
+        fr_met: SSIM
+        fr_met_scale: 0.5
+        fr_met_avg: True
+        fr_met_path: D:/DB/IQA/BIECON/
+
+    model:
+        model: IQA_BIECON_release.models.BIECON_base
+        use_dropout: True
+        opt_scheme: adam
+        lr: 1e-4
+        wr_l2: 1e-4
+        wl_loc: 1e2
+        wl_mos: 1e2
+
+    training:
+        batch_size_loc: 512
+        batch_size_nr: 8
+
+        test_freq: 2
+        save_freq: 5
+        regular_snap_freq: 20
+
+        n_imgs_to_record: 20
+        prefix: 'BIECON_'
+
+###############################################################################
+base_live:
+    database:
+        sel_data: LIVE
+        scenes: all
+        dist_types: all
+    model:
+        opt_scheme: [adam, adam]
+        lr: [1e-4, 1e-5]
+
+base_tid2013:
+    database:
+        sel_data: TID2013
+        scenes: all
+        dist_types: all
+    model:
+        opt_scheme: [adam, adam]
+        lr: [1e-5, 1e-5]

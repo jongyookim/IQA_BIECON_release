@@ -1,0 +1,41 @@
+database:
+    # database
+    sel_data:               # database list: LIVE / TID2008 / TID2013 / ...
+    scenes: all             # list of ref. images, default='all'
+    dist_types: all         # distortion types, default='all'
+
+    # patch
+    patch_size:             # ex) [32, 32]
+    patch_step:             # ex) [32, 32]
+    patch_mode:             # ex) 'both_side' or 'shift_center'
+    random_crops: 0         # if > 0, randomly crop n samples
+
+    # pre-processing
+    horz_ref: False         # reflect in horizaontal direction
+    std_filt_r: 1.0         # filter patches using STD
+    color: gray             # ex) 'gray' or 'rgb' or 'ycbcr'
+    local_norm: False       # mean subtrated and locally normzalied images
+
+    # etc.
+    train_size: 0.8         # ratio of training data over total data
+    shuffle: False          # shuffle data
+    sel_fr_met:             # select a FR-IQA metric: SSIM/GMS/FSIM/FSIMc/VSI
+    reverse_mos: False      # if True, MOS -> 1.0 - MOS
+
+model:
+    model:                  # model file path ex) IQA_authentic.models.FR_deep_1
+    input_size:             # ex) [32, 32]
+    num_ch:                 # ex) 3
+    opt_scheme: adam        # optimization sceheme
+    lr: 1e-4                # initial learning rate
+
+training:
+    batch_size: 100         # number of data in a batch
+    epochs: 100             # number of epochs to train
+
+    test_freq: 3           # validate the trained model every test_freq
+    save_freq: 6            # save data every save_freq
+    regular_snap_freq: 50   # save model snapshot every regular_snap_freq
+
+    n_imgs_to_record: 40    # number of images to record
+    prefix: ''              # prefix of filenames of recording data
