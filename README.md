@@ -8,7 +8,7 @@ This code implements the system described in the following paper:
 ## Prerequisites
 This code was developed and tested with Theano 0.9.
 
-## Generating local quality quality score maps
+## Generating local quality score maps
 Set `BASE_PATH` and `OUT_PATH` in `gen_local_metric_scores.m`, then run `gen_local_metric_scores.m` using Matlab. We provide a SSIM metric.
 
 ## Environment setting
@@ -25,7 +25,7 @@ Set `FR_MET_BASEPATH` and `FR_MET_SUBPATH_{DB}` in
 
 Detailed configuration of local quality score maps is set in `NR_biecon.yaml`.
 
-- `fr_met`: This describes the name of the full-reference image quality assessment metric. The corresponding local quality quality score maps must be generated first. ex) SSIM, FSIM ...
+- `fr_met`: This describes the name of the full-reference image quality assessment metric. The corresponding local quality score maps must be generated first. ex) SSIM, FSIM ...
 - `fr_met_scale`: This indicates the scale ratio of the local quality score maps to their original images.
 - `fr_met_avg`: If True, for each divided image patch, local quality score maps are averaged to be scalar values. Otherwise, patch of local quality score maps are used.
 
