@@ -1,5 +1,5 @@
 # BIECON
-A blind image evaluator based on a convolutional neural network (BIECON) is a no-reference image quality method using a CNN.
+A blind image evaluator based on a convolutional neural network (BIECON) is a no-reference image quality assessment method using a CNN.
 This code implements the system described in the following paper:
 
 > J. Kim and S. Lee, “Fully deep blind image quality predictor,” IEEE Journal of Selected Topics in Signal Processing, vol. 11, no. 1, pp. 206–220, Feb. 2017.
