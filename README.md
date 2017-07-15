@@ -43,3 +43,14 @@ python example.py
 
 - `tr_te_file`: Store the randomly divided (training and testing) reference image indices in this file.
 - `snap_path`: This indicates the path to store snapshot files
+
+
+## Performance
+Tested on full set of LIVE IQA and TID2013 databases. During the experiment, we randomly divided the reference images into two subsets, 80% for training and 20% for testing. The correlation coefﬁcients were averaged after the procedure was repeated 10 times while dividing the training and testing sets randomly.
+
+|Database |SRCC   |PLCC   |
+|---------|:-----:|:-----:|
+|LIVE     |0.9603 | 0.9622|
+|TID2013  |0.7130 | 0.7597|
+
+
