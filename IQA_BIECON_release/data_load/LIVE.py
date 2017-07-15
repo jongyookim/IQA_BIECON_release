@@ -4,7 +4,7 @@ import numpy as np
 
 # Define DB information
 BASE_PATH = 'D:/DB/IQA/LIVE/LIVE IQA DB'
-LIST_FILE_NAME = 'LIVE.txt'
+LIST_FILE_NAME = 'LIVE_IQA.txt'
 ALL_SCENES = list(range(29))
 ALL_DIST_TYPES = list(range(5))
 

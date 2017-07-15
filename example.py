@@ -9,5 +9,5 @@ tm.train_biecon(
     section='base_live',
     tr_te_file='outputs/tr_te_live.txt',
     snap_path='outputs/NR/BIECON_exp/',
-    epoch_loc=40, epoch_nr=90
+    epoch_loc=40, epoch_nr=100
 )

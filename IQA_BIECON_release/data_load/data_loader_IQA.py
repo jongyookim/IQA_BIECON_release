@@ -11,12 +11,10 @@ from scipy.ndimage.filters import convolve
 from .dataset import Dataset
 from ..ssim import ssim
 
-FR_MET_BASEPATH = 'D:/DB/IQA/BIECON/'
+FR_MET_BASEPATH = 'FR_met/'
 FR_MET_SUBPATH_LIVE = 'LIVE/LIVE IQA DB/'
-FR_MET_SUBPATH_CSIQ = 'CSIQ/'
 FR_MET_SUBPATH_TID2008 = 'TID2008/'
 FR_MET_SUBPATH_TID2013 = 'TID2013/'
-FR_MET_SUBPATH_WED = 'WED/'
 
 
 class DataLoader(object):
@@ -136,12 +134,6 @@ class DataLoader(object):
         elif sel_data == 'TID2013':
             from . import TID2013
             self.DB_module = TID2013
-        elif sel_data == 'CSIQ':
-            from . import CSIQ
-            self.DB_module = CSIQ
-        elif sel_data == 'WED':
-            from . import WED
-            self.DB_module = WED
         else:
             raise ValueError('Improper sel_data: {0}'.format(sel_data))
 
@@ -184,10 +176,6 @@ class DataLoader(object):
             self.fr_met_subpath = FR_MET_SUBPATH_TID2008
         elif self.sel_data == 'TID2013':
             self.fr_met_subpath = FR_MET_SUBPATH_TID2013
-        elif self.sel_data == 'CSIQ':
-            self.fr_met_subpath = FR_MET_SUBPATH_CSIQ
-        elif self.sel_data == 'WED':
-            self.fr_met_subpath = FR_MET_SUBPATH_WED
         else:
             raise ValueError('Improper sel_data: {0}'.format(self.sel_data))
 
