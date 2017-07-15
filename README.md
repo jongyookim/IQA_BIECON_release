@@ -2,7 +2,7 @@
 A blind image evaluator based on a convolutional neural network.
 This code implements the system described in the paper:
 
-J. Kim and S. Lee, “Fully deep blind image quality predictor,” IEEE Journal of Selected Topics in Signal Processing, vol. 11, no. 1, pp. 206–220, Feb. 2017.
+> J. Kim and S. Lee, “Fully deep blind image quality predictor,” IEEE Journal of Selected Topics in Signal Processing, vol. 11, no. 1, pp. 206–220, Feb. 2017.
 
 
 ## Prerequisites
@@ -22,11 +22,9 @@ Set `FR_MET_BASEPATH` and `FR_MET_SUBPATH_{DB}` in
 
 Detailed configuration is set in `NR_biecon.yaml` file.
 
-`fr_met`: This describes the name of the full-reference image quality assessment metric. ex) SSIM, FSIM ...
-
-`fr_met_scale`: This indicates the scale ratio of the local quality score maps to their original images.
-
-`fr_met_avg`: If True, for each divided image patch, local quality score maps are averaged to be scalar values. Otherwise, patch of local quality score maps are used.
+- `fr_met`: This describes the name of the full-reference image quality assessment metric. ex) SSIM, FSIM ...
+- `fr_met_scale`: This indicates the scale ratio of the local quality score maps to their original images.
+- `fr_met_avg`: If True, for each divided image patch, local quality score maps are averaged to be scalar values. Otherwise, patch of local quality score maps are used.
 
 
 ## Running demo
