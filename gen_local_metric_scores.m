@@ -5,7 +5,7 @@ addpath('metrics\')
 image_resize = 0.5;
 
 % LIVE IQA
-OUT_PATH = 'FR_met\LIVE IQA DB\';
+OUT_PATH = 'FR_met\LIVE\LIVE IQA DB\';
 BASE_PATH = 'D:\DB\IQA\LIVE\LIVE IQA DB\';
 info_file = 'LIVE_IQA.txt';
 format = '%d %d %s %s %f %d %d';

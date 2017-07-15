@@ -4,7 +4,6 @@ This code implements the system described in the following paper:
 
 > J. Kim and S. Lee, “Fully deep blind image quality predictor,” IEEE Journal of Selected Topics in Signal Processing, vol. 11, no. 1, pp. 206–220, Feb. 2017.
 
-
 ## Prerequisites
 This code was developed and tested with Theano 0.9.
 
@@ -30,8 +29,8 @@ Detailed configuration of local quality score maps is set in `NR_biecon.yaml`.
 - `fr_met_avg`: If True, for each divided image patch, local quality score maps are averaged to be scalar values. Otherwise, patch of local quality score maps are used.
 
 
-## Running demo
-We provide the demo code for running our model.
+## Training BIECON
+We provide the demo code for training a BIECON model.
 ```bash
 python example.py
 ```
