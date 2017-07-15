@@ -36,7 +36,7 @@ info = textscan(fid, format, [inf, 7]);
 fclose(fid);
 nFiles = size(info{1},1);
 
-put_path = [FR_MET_BASEPATH, FR_MET_SUBPATH]
+put_path = [FR_MET_BASEPATH, FR_MET_SUBPATH];
 fprintf('Save path: %s\n', put_path)
 if ~exist(put_path, 'dir')
     mkdir(put_path);
