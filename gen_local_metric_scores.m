@@ -4,8 +4,10 @@ addpath('metrics\')
 %% Parameters
 image_resize = 0.5;
 
+FR_MET_BASEPATH = 'FR_met\';
+
 % LIVE IQA
-OUT_PATH = 'FR_met\LIVE\LIVE IQA DB\';
+FR_MET_SUBPATH = 'LIVE\LIVE IQA DB\';
 BASE_PATH = 'D:\DB\IQA\LIVE\LIVE IQA DB\';
 info_file = 'LIVE_IQA.txt';
 format = '%d %d %s %s %f %d %d';
@@ -13,7 +15,7 @@ ref_idx = 3;
 dis_idx = 4;
 
 % % TID2008
-% OUT_PATH = 'FR_met\TID2008\';
+% FR_MET_SUBPATH = 'TID2008\';
 % BASE_PATH = 'D:\DB\IQA\TID2008\';
 % info_file = 'TID2008.txt';
 % format = '%d %d %s %s %f';
@@ -21,7 +23,7 @@ dis_idx = 4;
 % dis_idx = 4;
 
 % % TID2013
-% OUT_PATH = 'FR_met\TID2013\';
+% FR_MET_SUBPATH = 'TID2013\';
 % BASE_PATH = 'D:\DB\IQA\TID2013\';
 % info_file = 'TID2013.txt';
 % format = '%d %d %s %s %f';
@@ -34,9 +36,10 @@ info = textscan(fid, format, [inf, 7]);
 fclose(fid);
 nFiles = size(info{1},1);
 
-fprintf('Save path: %s\n', OUT_PATH)
-if ~exist(OUT_PATH, 'dir')
-    mkdir(OUT_PATH);
+put_path = [FR_MET_BASEPATH, FR_MET_SUBPATH]
+fprintf('Save path: %s\n', put_path)
+if ~exist(put_path, 'dir')
+    mkdir(put_path);
 end
 
 for im_idx = 1:nFiles
@@ -65,11 +68,11 @@ for im_idx = 1:nFiles
 
     % Store metric results
     [pathstr, name, ext] = fileparts(disFile);
-    if ~exist([OUT_PATH, pathstr], 'dir')
-        mkdir([OUT_PATH, pathstr]);
+    if ~exist([put_path, pathstr], 'dir')
+        mkdir([put_path, pathstr]);
     end
 
-    fid = fopen([OUT_PATH, disFile, '.ssim.bin'], 'wb');
+    fid = fopen([put_path, disFile, '.ssim.bin'], 'wb');
     fwrite(fid, ssim_map, 'float32');
     fclose(fid);
 end
