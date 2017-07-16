@@ -16,8 +16,7 @@ def train_biecon(config_file, section, snap_path,
                  output_path=None, snap_file=None, loc_snap_file=None,
                  tr_te_file=None, epoch_loc=0, epoch_nr=0):
     """
-    Imagewise training of an IQA model using both reference and
-    distorted images.
+    Train BIECON model with two stages.
     """
     db_config, model_config, train_config = config_parser(
         config_file, section)
@@ -173,6 +172,8 @@ def run_nr_iqa(train_data, test_data, model, trainer, epochs, n_batch_imgs,
                prefix2='nr_'):
     """
     @type model: .models.model_basis.ModelBasis
+    @type train_data: .data_load.dataset.Dataset
+    @type test_data: .data_load.dataset.Dataset
     """
     # Make dummy shared dataset
     max_num_patch = np.max(np.asarray(train_data.npat_img_list)[:, 0])
