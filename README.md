@@ -46,11 +46,11 @@ python example.py
 
 
 ## Quantitative results
-BIECON was tested on the full-sets of LIVE IQA and TID2013 databases. During the experiment, we randomly divided the reference images into two subsets, 80% for training and 20% for testing. The correlation coefﬁcients were averaged after the procedure was repeated 10 times while dividing the training and testing sets randomly.
+BIECON was tested on the full-sets of LIVE IQA, TID2013, and CSIQ databases. During the experiment, we randomly divided the reference images into two subsets, 80% for training and 20% for testing. The correlation coefﬁcients were averaged after the procedure was repeated 10 times while dividing the training and testing sets randomly.
 
 |Database |SRCC   |PLCC   |
 |---------|:-----:|:-----:|
 |LIVE     |0.9603 | 0.9622|
 |TID2013  |0.7205 | 0.7650|
-
+|CSIQ     |0.8306 | 0.8493|
 
