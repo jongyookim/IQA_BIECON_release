@@ -52,5 +52,5 @@ BIECON was tested on the full-sets of LIVE IQA, TID2013, and CSIQ databases. Dur
 |---------|:-----:|:-----:|
 |LIVE     |0.9603 | 0.9622|
 |TID2013  |0.7205 | 0.7650|
-|CSIQ     |0.8306 | 0.8493|
+|CSIQ     |0.8251 | 0.8380|
 

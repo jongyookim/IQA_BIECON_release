@@ -34,7 +34,7 @@ common:
         prefix: 'BIECON_'
 
 ###############################################################################
-base_live:
+base_LIVE:
     database:
         sel_data: LIVE
         scenes: all
@@ -43,7 +43,7 @@ base_live:
         opt_scheme: [adam, adam]
         lr: [1e-4, 1e-5]
 
-base_tid2013:
+base_TID2013:
     database:
         sel_data: TID2013
         scenes: all

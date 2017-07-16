@@ -217,7 +217,7 @@ class Model(ModelBasis):
         # records.add_im_data('met_s_p', met_s_p_set)
         # records.add_im_data('met_s', met_s_set)
 
-        records.add_imgs('x_c', x_c_im, caxis=[0, 1])
+        records.add_imgs('x_c', x_c_im, caxis=[-0.25, 0.25])
 
         if bat2img_idx_set:
             def score_to_img(score, repeat=1):
@@ -228,8 +228,6 @@ class Model(ModelBasis):
             records.add_imgs('met_s', met_s_img, caxis='auto')
             met_s_p_img = score_to_img(met_s_p, 10)
             records.add_imgs('met_s_p', met_s_p_img, caxis='auto')
-        else:
-            records.add_imgs('met_s_img', met_s_im, caxis='auto')
 
         return cost, records
 
