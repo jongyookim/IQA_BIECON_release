@@ -51,9 +51,14 @@ class ModelBasis(object):
         self.layers = OrderedDict()
         self.params = OrderedDict()
 
-    def set_opt_configs(self, model_config):
-        self.lr = float(model_config.get('lr', 1e-3))
-        self.opt_scheme = model_config.get('opt_scheme', 'adam')
+    def set_opt_configs(self, model_config=None, opt_scheme=None, lr=None):
+        if model_config is None:
+            assert lr is not None and opt_scheme is not None
+        else:
+            lr = float(model_config.get('lr', 1e-3))
+            opt_scheme = model_config.get('opt_scheme', 'adam')
+        self.lr = lr
+        self.opt_scheme = opt_scheme
         self.opt.set_learning_rate(self.lr)
 
     ###########################################################################

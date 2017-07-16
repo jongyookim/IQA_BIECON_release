@@ -67,8 +67,8 @@ class Dataset(object):
         self.patch_step = patch_step
         self.random_crops = random_crops
 
-    def put_data(self, dis_data, ref_data=None,
-                 dis2ref_idx=None, loc_data=None,
+    def put_data(self, dis_data, ref_data=[],
+                 dis2ref_idx=None, loc_data=[],
                  score_data=None, npat_img_list=None, filt_idx_list=None,
                  imagewise=True, shuffle=False):
         """Construct a Dataset.
@@ -106,7 +106,7 @@ class Dataset(object):
         self.num_ch = self.dis_data.shape[3]
 
         # ref_data
-        if ref_data is not None:
+        if ref_data:
             self.exist_ref = True
             self.ref_data = ref_data
             if isinstance(self.ref_data, list):
@@ -121,7 +121,7 @@ class Dataset(object):
             self.exist_ref = False
 
         # loc_data
-        if loc_data is not None:
+        if loc_data:
             self.exist_loc = True
             self.loc_data = loc_data
             if isinstance(self.loc_data, list):

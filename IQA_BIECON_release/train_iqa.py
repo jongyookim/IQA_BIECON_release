@@ -32,8 +32,6 @@ def train_biecon(config_file, section, snap_path,
 
     # Create model
     opt_scheme_list, lr_list = make_opt_config_list(model_config)
-    model_config['opt_scheme'] = opt_scheme_list[0]
-    model_config['lr'] = lr_list[0]
     model = create_model(
         model_config, train_data.patch_size, train_data.num_ch)
     if snap_file is not None:
@@ -61,6 +59,7 @@ def train_biecon(config_file, section, snap_path,
     if epoch_loc > 0:
         prefix2 = 'LOC_'
         batch_size_loc = int(train_config.get('batch_size_loc', 512))
+        model.set_opt_configs(opt_scheme=opt_scheme_list[0], lr=lr_list[0])
 
         score = run_reg_loc_pw(
             train_data, test_data, model, trainer, epoch_loc, batch_size_loc,
@@ -76,10 +75,7 @@ def train_biecon(config_file, section, snap_path,
     if epoch_nr > 0:
         prefix2 = 'NR_'
         batch_size_nr = int(train_config.get('batch_size_nr', 8))
-
-        model_config['opt_scheme'] = opt_scheme_list[1]
-        model_config['lr'] = lr_list[1]
-        model.set_opt_configs(model_config)
+        model.set_opt_configs(opt_scheme=opt_scheme_list[1], lr=lr_list[1)
 
         score = run_nr_iqa(
             train_data, test_data, model, trainer, epoch_nr, batch_size_nr,
@@ -263,6 +259,9 @@ def make_opt_config_list(model_config):
     else:
         lr_list.append(float(lr))
         lr_list.append(float(lr))
+
+    model_config['opt_scheme'] = opt_scheme_list[0]
+    model_config['lr'] = lr_list[0]
 
     return opt_scheme, lr_list
 
