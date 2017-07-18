@@ -245,12 +245,14 @@ def make_opt_config_list(model_config):
     lr = model_config.get('lr', 1e-4)
 
     opt_scheme_list = []
-    if isinstance(opt_scheme, (list, tuple)):
+    if isinstance(opt_scheme, str):
+        opt_scheme_list.append(opt_scheme)
+        opt_scheme_list.append(opt_scheme)
+    elif isinstance(opt_scheme, (list, tuple)):
         for c_opt_scheme in opt_scheme:
             opt_scheme_list.append(c_opt_scheme)
     else:
-        opt_scheme_list.append(opt_scheme)
-        opt_scheme_list.append(opt_scheme)
+        raise ValueError('Improper type of opt_scheme:', opt_scheme)
 
     lr_list = []
     if isinstance(lr, (list, tuple)):
@@ -263,7 +265,7 @@ def make_opt_config_list(model_config):
     model_config['opt_scheme'] = opt_scheme_list[0]
     model_config['lr'] = lr_list[0]
 
-    return opt_scheme, lr_list
+    return opt_scheme_list, lr_list
 
 
 def create_model(model_config, patch_size=None, num_ch=None):
