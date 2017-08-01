@@ -75,7 +75,7 @@ def train_biecon(config_file, section, snap_path,
     if epoch_nr > 0:
         prefix2 = 'NR_'
         batch_size_nr = int(train_config.get('batch_size_nr', 8))
-        model.set_opt_configs(opt_scheme=opt_scheme_list[1], lr=lr_list[1)
+        model.set_opt_configs(opt_scheme=opt_scheme_list[1], lr=lr_list[1])
 
         score = run_nr_iqa(
             train_data, test_data, model, trainer, epoch_nr, batch_size_nr,
